@@ -13,25 +13,32 @@
         <div class="wrapper">
             <div class="header__wrapper">
                 <div class="header__logo">
-                <a href="/" class="header__logo-link">
-                <img src="/img/svg/odigo-logo.svg" alt="Discover Amazing places in Japan">
-                </a>
-            </div>
-            <nav class="header__nav">
-                <ul class="header__list">
-                    <li class="header__item">
-                        <a href="#!" class="header__link">Articles</a></li>
-                    <li class="header__item">
-                        <a href="#!" class="header__link">Locations</a></li>
-                    <li class="header__item">
-                        <a href="#!" class="header__link">Videos</a></li>
-                    <li class="header__item">
-                        <a href="#!" class="header__link">Sign in</a></li>
-                </ul>
-            </nav>
-            </div>
-            
-            
+                    <a href="/" class="header__logo-link">
+                        <img class="header__logo-pic" src="/img/svg/odigo-logo.svg" alt="Discover Amazing places in Japan">
+                    </a>
+                </div>
+                <nav class="header__nav">
+                    <ul class="header__list">
+                        <li class="header__item">
+                            <a href="#!" class="header__link">Articles</a></li>
+                        <li class="header__item">
+                            <a href="#!" class="header__link">Locations</a></li>
+                        <li class="header__item">
+                            <a href="#!" class="header__link">Videos</a></li>
+                        <li class="header__item">
+                            <a href="#!" class="header__link">Sign in</a></li>
+                    </ul>
+                    <div class="header__nav-close">
+                        <span class="header__nav-close-line"></span>
+                        <span class="header__nav-close-line"></span>
+                    </div>
+                </nav>
+                <div class="header__burger burger">
+                    <span class="burger__line burger__line_first"></span>
+                    <span class="burger__line burger__line_second"></span>
+                    <span class="burger__line burger__line_third"></span>
+                </div>
+            </div>            
         </div>
     </header>
     <main class="main">
@@ -39,13 +46,12 @@
             <div class="wrapper">
                 <h1 class="intro__title">Discover Amazing places in Japan</h1>
                 <p class="intro__subtitle">Jump off balcony, onto stranger's head. Chase ball of string hide when guests come over. Being gorgeous with belly side up i could pee on this if i had the energy but under the bed, for attack the child, open the door, 
-
                 </p>
                 <form class="search-form">
                     <fildset class="search-form__wrap">
                         <p class="search-form__info">
-                            <input type="text" name="user-like-to-do" class="saerch-form_field" placeholder="What would you like to do?">
-                            <input type="text" name="user-like-to-go" class="saerch-form_field" placeholder="Where would you like to go?">
+                            <input type="text" name="user-like-to-do" class="search-form__field" placeholder="What would you like to do?">
+                            <input type="text" name="user-like-to-go" class="search-form__field" placeholder="Where would you like to go?">
                             <button type="submit" class="search-form__sumbit">search</button>
                         </p>
                     </fildset>
@@ -172,7 +178,7 @@
                         </p>
                         <a href="#!" class="tour__more">VIEW NEIGHBORHOOD</a>
                     </div>
-                    <div class="tour__pic">
+                    <div class="tour__pic tour__pic_mob_first">
                         <img src="/img/tour-2.jpg" alt="Featured Neighborhood: Kyoto’s Arashiyama" class="tour__thumb">
                     </div>   
                 </div>
@@ -334,7 +340,85 @@
             </div>
         </section>
 
+        <div class="videos">
+            <div class="videos__wrapper">
+                <div class="video__item">
+                    <iframe class="video__element" src="https://www.youtube.com/embed/dEJkGXhFwY4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+
 
     </main>
+    <footer class="footer">
+        <div class="wrapper">
+            <div class="footer__item">
+                <div class="footer__logo">
+                    <img src="/img/svg/odigo-logo-lg.svg" alt="Discover Amazing places in Japan" class="footer__logo-pic">
+                </div>
+                <nav class="footer__nav">
+                    <ul class="footer__menu">
+                        <li class="footer__menu-item">
+                            <h3 class="footer__menu-title">
+                                Company
+                            </h3>
+                        </li>
+                        <li class="footer__menu-item">
+                            <a href="#!" class="footer__menu-link">About</a>
+                        </li>
+                        <li class="footer__menu-item">
+                            <a href="#!" class="footer__menu-link">Team</a>
+                        </li>
+                        <li class="footer__menu-item">
+                            <a href="#!" class="footer__menu-link">Careers</a>
+                        </li>
+                        <li class="footer__menu-item">
+                            <a href="#!" class="footer__menu-link">Privacy Policy</a>
+                        </li>
+                    </ul>
+                    <ul class="footer__menu">
+                        <li class="footer__menu-item">
+                            <h3 class="footer__menu-title">
+                                Locations
+                            </h3>
+                        </li>
+                        <li class="footer__menu-item">
+                            <a href="#!" class="footer__menu-link">Tokyo</a>
+                        </li>
+                        <li class="footer__menu-item">
+                            <a href="#!" class="footer__menu-link">Kyoto</a>
+                        </li>
+                        <li class="footer__menu-item">
+                            <a href="#!" class="footer__menu-link">Osaka</a>
+                        </li>
+                        <li class="footer__menu-item">
+                            <a href="#!" class="footer__menu-link">Hokkaido</a>
+                        </li>
+                    </ul>
+                    <ul class="footer__menu">
+                        <li class="footer__menu-item">
+                            <h3 class="footer__menu-title">
+                                Social Media
+                            </h3>
+                        </li>
+                        <li class="footer__menu-item">
+                            <a href="#!" class="footer__menu-link">Facebook</a>
+                        </li>
+                        <li class="footer__menu-item">
+                            <a href="#!" class="footer__menu-link">Twitter</a>
+                        </li>
+                        <li class="footer__menu-item">
+                            <a href="#!" class="footer__menu-link">Instagram</a>
+                        </li>
+                        <li class="footer__menu-item">
+                            <a href="#!" class="footer__menu-link">Youtube</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </footer>
+    <script src="/js/main.js"></script>
 </body>
 </html>

@@ -15,23 +15,23 @@
     src: local(''),
          url('../fonts/lato-v20-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
          url('../fonts/lato-v20-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-  }
+}
   /* lato-900 - latin */
-  @font-face {
+@font-face {
     font-family: 'Lato';
     font-style: normal;
     font-weight: 900;
     src: local(''),
          url('../fonts/lato-v20-latin-900.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
          url('../fonts/lato-v20-latin-900.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-  }
+}
 
-  html{
-      box-sizing: border-box;
-  }
+html{
+    box-sizing: border-box;
+}
 
   *, *::after, *::before{
-      box-sizing: inherit; //наследуем от родителя
+      box-sizing: inherit; /*наследуем от родителя*/
 }
 
 body{
@@ -43,7 +43,7 @@ body{
     color: #102746;
 }
 
-.img{
+img{
     max-width: 100%;
     height: auto;
 }
@@ -51,11 +51,13 @@ body{
 .wrapper{
     max-width: 1060px;
     margin: 0 auto;
+    padding: 0 15px; /*для меньших разрешей чтоб была рамка*/
 }
 
 .wrapper-full{
     max-width: 1262px;
     margin: 0 auto;
+    padding: 0 15px;
 }
 
 .section-title{
@@ -84,6 +86,13 @@ body{
     top: 0;
     left: 0;
     width: 100%;
+    transition: .2s linear; /*при смене фона хедера JS*/
+    padding-bottom: 20px; /*не по макету - так красивее*/
+    z-index: 6;
+}
+
+.header_active{
+background: #0E1D28;
 }
 
 .header__wrapper{
@@ -116,6 +125,37 @@ body{
 
 .header__link:hover, .header__link:focus, .header__link:active{
     opacity: .75;
+}
+
+
+.header__burger{
+    display: none;   /*не показывать*/
+    width: 40px;
+    height: 20px;
+    position: relative;
+}
+
+.burger__line{
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    position: absolute;
+    left: 0;
+
+}
+
+.burger__line_first{
+    top: 0;
+}
+
+.burger__line_third{
+    bottom: 0;
+}
+
+.burger__line_second{
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 /* Header styles end */
@@ -152,9 +192,8 @@ display: flex;
 flex-wrap: wrap;
 }
 
-.saerch-form_field{
-    background-color:transparent;
-    background: url(/img/svg/sircle-item.svg) no-repeat left 7px;
+.search-form__field{
+    background: transparent url(/img/svg/sircle-item.svg) no-repeat left 7px;
     background-size: 20px;
     border: 0;
     border-bottom: 2px solid #BFC0C5;;
@@ -167,7 +206,7 @@ flex-wrap: wrap;
     color: white;
 }
 
-.saerch-form_field::placeholder{
+.search-form__field::placeholder{
     font-size: 18px;
     font-weight: 500;
     color: white;
@@ -245,7 +284,6 @@ padding: 0 100px;
 }
 
 .benefits__card-discription{
-    font-weight: normal;
     font-size: 16px;
     line-height: 24px;
     margin-bottom: 39px;
@@ -302,7 +340,8 @@ padding: 0 100px;
 .places__cards{
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    grid-gap: 10px;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
 }
 
 .places__card{
@@ -349,12 +388,12 @@ transform: scale(1.05);
     transition: 0.15s all;
 }
 
-.places__card_size_lg{
+.places__card-pic_size_lg{
     height: 354px;
     object-fit: cover; /*изображения при уменьшении обрезаются и центрируются*/
 }
 
-.places__card_size_sm{
+.places__card-pic_size_sm{
     height: 283px;
     object-fit: cover; /*изображения при уменьшении обрезаются и центрируются*/
 }
@@ -380,7 +419,7 @@ transform: scale(1.05);
 .tours__tour{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 0 100px;
+    grid-column-gap: 100px;
     align-items: center;
     margin-bottom: 77px;
 }
@@ -428,8 +467,9 @@ transform: scale(1.05);
 
 .top__cards{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 57px;
+    grid-template-columns: repeat(6, 1fr);
+    grid-column-gap: 57px;
+    grid-row-gap: 57px;
 }
 
 .top__card-pic{
@@ -440,6 +480,7 @@ transform: scale(1.05);
 .top__card{        /*один размер карточек при разном наполнении*/
     display: flex;
     flex-direction: column;
+    grid-column:span 2; /*карточка занимает 2 колонки из 6*/
 }
 
 .top__card-stats{
@@ -468,7 +509,7 @@ transform: scale(1.05);
     font-size: 16px;
     line-height: 24px;
     color: #FFFFFF;
-    padding-right: 20PX; /*4отступ+16*16размер иконки*/
+    padding-right: 20px; /*4отступ+16*16размер иконки*/
     background: url(/img/svg/heart-ico.svg) no-repeat right center;
     margin-right: 14px;
 }
@@ -503,3 +544,295 @@ transform: scale(1.05);
     background-color: #054eb1;
 }
 /* Top styles end */
+
+
+/* Videos styles start */
+
+.videos{
+    width: 100%;
+}
+
+.videos__wrapper{
+    max-width: 1440px;
+    margin: 0 auto;
+    position: relative; /*для video__element*/
+}
+.video__item{
+    padding-top: 56.25%; /*100% - получили квадрат, который при сжатии изменяет высоту относительно ширины 56,25% - для размера видео 16 к9*/ 
+}
+
+.video__element{
+position: absolute; /*в связке с родителем video__item*/
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+}
+/* Videos styles end */
+
+
+/* Footer styles start */
+
+.footer{
+    background: #0E1D28;
+    padding: 119px 0 ;
+}
+
+.footer__item{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer__logo{
+    width: 50%;
+}
+
+.footer__nav{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 50%;
+}
+
+.footer__menu-title{
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    color: white;
+}
+
+.footer__menu-link{
+    font-size: 16px;
+    line-height: 24px;
+    color: white;
+    text-decoration: none;
+}
+
+.footer__menu-link:hover, 
+.footer__menu-link:focus,
+.footer__menu-link:active{
+    opacity: 0.75;
+}
+
+/* Footer styles end */
+
+
+/* Media styles start */
+
+@media screen and (max-width: 960px){
+    .benefits{
+        margin-bottom: 75px;
+    }
+    .benefits__card{
+        margin-bottom: 60px;
+    }
+    .search-form__field{
+        margin-bottom: 25px;  /*кнопка не прилипает к импутам*/
+    }
+    .benefits__cards{
+        padding: 0 15px;
+        grid-column-gap: 35px;
+        grid-row-gap: 35px;
+    }
+    .benefits__title{
+        padding: 55px 15px;
+    }
+    .benefits__wrap{
+        box-shadow: none;
+    }
+    .places__card_size_lg{
+        grid-column: span 6;
+    }
+    .places__card_size_sm{
+        grid-column: span 6;
+    }
+    .tours__tour{
+        grid-column-gap: 35px;
+    }
+    .tour__info{
+        padding-left: 0;
+    }
+    .tour__title{
+        margin-bottom: 15px;    
+    }
+    .tour__description{
+        margin-bottom: 15px;
+    }
+    .top__cards{
+        grid-column-gap: 25px;
+        grid-row-gap: 50px;
+    }
+    .top__card{
+    grid-column: span 3;
+    }
+    .top__card-pic{
+        margin-bottom: 20px;
+    }
+    .footer{
+        padding: 60px;
+    }
+    }
+
+
+@media screen and (max-width: 767px){
+    
+    .section-title{
+        margin-bottom: 25px;
+    }
+    .section-title::after{
+        width: 78px;
+    }
+    .header__burger {
+        display: block;
+    }
+    .header__wrapper{
+        padding-top: 28px;
+    }
+    .header__nav{
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: #000;
+        z-index: 10;
+        padding: 75px;
+        transform: translateX(100%);
+    } 
+    .header__nav-active{
+        transform: translateX(0);
+        transition: 0.2s all linear;
+    }
+    .header__item{
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+    .header__item:last-child{
+        margin-bottom: 0;
+    }
+    .header__link{
+        font-size: 42px;
+        line-height: 48px;
+    }  
+    .header__nav-close{
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 11;
+    }
+    .header__nav-close-line{
+        width: 100%;
+        display: block;
+        height: 2px;
+        background-color: white;
+        position: absolute;
+        top: 50%;
+    }
+    .header__nav-close-line:first-child{
+    transform: translateY(-50%) rotate(45deg);
+    }
+    .header__nav-close-line:last-child{
+        transform: translateY(-50%) rotate(-45deg);
+    }
+    .intro{
+        padding-top: 125px;
+    }
+    .intro__title{
+        font-size: 32px;
+        line-height: 48px;
+    }
+    .intro__subtitle{
+        font-size: 14px;
+    }
+    .search-form__field{
+        width: 100%;
+        margin-right: 0;
+        padding-bottom: 12px;
+        background: transparent url(/img/svg/sircle-item.svg) no-repeat left 2px;
+    }
+    .search-form__field::placeholder{
+        font-size: 16px;
+    }
+    .search-form__sumbit{
+        width: 100%;
+    }
+    .benefits{
+        margin-bottom: 36px;
+    }
+    .benefits__card{
+        grid-column: span 3;
+        margin-bottom: 40px;
+    }
+    .benefits__card-title{
+        margin-bottom: 12px;
+    }
+    .benefits__card-discription{
+        margin-bottom: 20px;
+    }
+    .places{
+        margin-bottom: 76px;
+    }
+    .benefits__card-pic{
+        margin-bottom: 20px;
+    }
+    .places__card-pic_size_lg, .places__card-pic_size_sm{
+        height: 230px;
+    }
+    .places__view-all{
+        margin-bottom: 25px;
+    }
+    .places__caption{
+        margin-bottom: 0;
+    }
+    .tours{
+        margin-bottom: 76px;
+    }
+    .tour__info, .tour__pic{
+        grid-column: span 2;
+    }
+    .tour__pic{
+        margin-bottom: 12px;
+    }
+    .tours__tour{
+        margin-bottom: 50px;
+    }
+    .tour__pic_mob_first{
+        grid-row-start: -1; /*меняем картинку и текст местами*/
+    }
+    .top {
+        margin-bottom: 76px;
+    }
+    .top__card{
+        grid-column: span 6;
+    }
+    .top__card-stats{
+        min-width: 386px; /*сдвигаем лайки на картинку при горизонтальном просмотре на мобиле*/
+    }
+    .top__card-description{
+        margin-bottom: 15px;
+    }
+    .footer{
+        padding-left: 20px;
+    }
+    .footer__logo{
+        width: 100%;
+        margin-bottom: 24px;
+    }
+    .footer__nav{
+        width: 100%;
+    }
+    .footer__menu{
+        width: 50%;
+        margin-bottom: 24px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .header__nav{
+        padding: 75px 30px;
+    }
+}
+/* Media styles end */
