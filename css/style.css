@@ -258,7 +258,7 @@ flex-wrap: wrap;
 .benefits__cards{
 display: grid;
 grid-template-columns: repeat(3, 1fr);
-grid-column-gap: 55px;
+column-gap: 55px;
 padding: 0 100px;
 }
 
@@ -340,8 +340,8 @@ padding: 0 100px;
 .places__cards{
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    grid-column-gap: 10px;
-    grid-row-gap: 10px;
+    column-gap: 10px;
+    row-gap: 10px;
 }
 
 .places__card{
@@ -419,7 +419,7 @@ transform: scale(1.05);
 .tours__tour{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-column-gap: 100px;
+    column-gap: 100px;
     align-items: center;
     margin-bottom: 77px;
 }
@@ -468,8 +468,8 @@ transform: scale(1.05);
 .top__cards{
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    grid-column-gap: 57px;
-    grid-row-gap: 57px;
+    column-gap: 57px;
+    row-gap: 57px;
 }
 
 .top__card-pic{
@@ -631,8 +631,8 @@ height: 100%;
     }
     .benefits__cards{
         padding: 0 15px;
-        grid-column-gap: 35px;
-        grid-row-gap: 35px;
+        column-gap: 35px;
+        row-gap: 35px;
     }
     .benefits__title{
         padding: 55px 15px;
@@ -647,7 +647,7 @@ height: 100%;
         grid-column: span 6;
     }
     .tours__tour{
-        grid-column-gap: 35px;
+        column-gap: 35px;
     }
     .tour__info{
         padding-left: 0;
@@ -659,8 +659,8 @@ height: 100%;
         margin-bottom: 15px;
     }
     .top__cards{
-        grid-column-gap: 25px;
-        grid-row-gap: 50px;
+        column-gap: 25px;
+        row-gap: 50px;
     }
     .top__card{
     grid-column: span 3;
@@ -756,9 +756,6 @@ height: 100%;
     .search-form__field::placeholder{
         font-size: 16px;
     }
-    .search-form__sumbit{
-        width: 100%;
-    }
     .benefits{
         margin-bottom: 36px;
     }
@@ -809,7 +806,7 @@ height: 100%;
         grid-column: span 6;
     }
     .top__card-stats{
-        min-width: 386px; /*сдвигаем лайки на картинку при горизонтальном просмотре на мобиле*/
+        max-width: 386px; /*сдвигаем лайки на картинку при горизонтальном просмотре на мобиле*/
     }
     .top__card-description{
         margin-bottom: 15px;
@@ -835,4 +832,13 @@ height: 100%;
         padding: 75px 30px;
     }
 }
+
+@media screen and (max-width: 460px) {
+    
+    .search-form__sumbit{
+        width: 100%;
+    }
+}
+
+
 /* Media styles end */
